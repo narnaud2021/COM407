@@ -1,5 +1,6 @@
 #Alex and Nelia
-#Fuzzy System
+#Feb 2020
+#Fuzzy System for XPilot-AI
 
 import random
 import libpyAI as ai
