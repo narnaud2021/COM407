@@ -1,3 +1,5 @@
+#Alex Saucedo
+#Genetic Algorithm adapted for XPilot-AI
 
 from random import *
 
@@ -83,6 +85,5 @@ def mutation(population, mutation_rate):
                     population[i][0][j] = 0
                 else:
                     population[i][0][j] = 1
-
-
+                    
     return population
