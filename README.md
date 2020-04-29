@@ -7,4 +7,4 @@ For further information on XPilot-AI library, please visit: http://xpilot-ai.org
 
 For our final project, please visit: https://narnaud2021.wixsite.com/a-n-xpilot
 
-#Contributors: @thesauce14, @narnaud2021
+#Team: @thesauce14, @narnaud2021
