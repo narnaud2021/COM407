@@ -1,6 +1,6 @@
 #Alex and Nelia
-#Feb 1 2020
-#Program 1
+#Feb 2020
+#Production System for XPilot-AI
 
 import random
 import libpyAI as ai
@@ -101,4 +101,4 @@ def AI_loop():
 
   #Just keep shooting
   ai.fireShot()
-ai.start(AI_loop,["-name","A&N2",])
+ai.start(AI_loop,["-name","A&N"])
