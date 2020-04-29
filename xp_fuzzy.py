@@ -1,6 +1,5 @@
 #Alex and Nelia
-#Feb 1 2020
-#Program 1
+#fuzzy system
 
 import random
 import libpyAI as ai
