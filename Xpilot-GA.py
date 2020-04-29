@@ -1,7 +1,8 @@
 #Alex and Nelia
-#April 05, 2020
+#April 2020
 #Program Xpilot-GA
-#This program runs the chromosome
+#trained agent for XPilot
+
 import random
 
 import libpyAI as ai
@@ -12,12 +13,11 @@ def convert(some_list):
 	return int(str(mystring),2)
 
 def AI_loop():
-  #This is the best cromosome from the history of the best individuals from the history
+  #This is the best chromosome from the history of the best individuals from the history
   chrom = [0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1]
   #Enemy rules
   enemyrule1 = convert(chrom[0:4])*20+100
   enemyrule2 = convert(chrom[4:8])*20+100
-
 
   #These are Thrusting Rules
   thrustrule1 = convert(chrom[8:11])*3
@@ -53,8 +53,6 @@ def AI_loop():
   turnrule16 = convert(chrom[134:139])*10+150
   turnrule17 = convert(chrom[139:144])*10+150
   turnrule18 = convert(chrom[144:149])*10+150
-
-
 
   #Release keys
   ai.thrust(0)
@@ -138,4 +136,4 @@ def AI_loop():
   elif index > 4:
     ai.turnLeft(1)  
 
-ai.start(AI_loop,["-name","A&N2",])
+ai.start(AI_loop,["-name","A&N"])
