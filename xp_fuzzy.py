@@ -1,9 +1,9 @@
 #Alex and Nelia
-#fuzzy system
+#Fuzzy System
 
 import random
 import libpyAI as ai
-from fuzzy2 import *
+from fuzzyMethod import *
 
 def AI_loop():
   #Release keys
@@ -25,7 +25,6 @@ def AI_loop():
 	
   ePosX = ai.screenEnemyXId(closestShip)
 
-
   distwalls = []
   for i in range(8):
     distwalls.append(ai.wallFeeler(500,heading+(45*i)))
@@ -40,6 +39,7 @@ def AI_loop():
   #Set variable to lock onto enemy ship  
   eLock = int(ai.lockHeadingDeg())
   sAlert = ai.shotDist(0)
+
  # print("eLock ", eLock)
   #print("Dist ", eDist)
   #print("eTrack ", eTrack)
@@ -48,33 +48,16 @@ def AI_loop():
   #print("S alert", sAlert)
   print("----------")
   
-  #distTrackWall(trackWall)
-  #distEnemy(eDist)
-  #distWall(distwalls[5])
-  cRisk = crashRisk(trackWall,eDist,shortest)
-  k = []
-  k.append(cRisk)
-  maxC = max(k)
-  print("MAX", maxC)
-  
   #Enemy Rules
   if eDist < 250 and eDist < trackWall and ePosX < ai.selfX() and ai.shotAlert(0) < 100 and maxC < 200:
-    #ai.turnLeft(1)
-    #ai.thrust(1)
-  #  ai.lockClose() #returns deg of closest Ship
     ai.turnToDeg(ai.aimdir(0))
     ai.fireShot()
-  elif eDist < 250 and eDist < trackWall and ePosX > ai.selfX() and ai.shotAlert(0) < 100 and maxC < 200: 
-    #ai.turnRight(1)
-    #ai.thrust(1)
-  #  ai.lockClose() 
+  elif eDist < 250 and eDist < trackWall and ePosX > ai.selfX() and ai.shotAlert(0) < 100 and maxC < 200:  
     ai.turnToDeg(ai.aimdir(0))
     ai.fireShot()
   if eDist < 450 and eDist < trackWall and maxC < 200:
-   # ai.lockClose() 
     ai.turnToDeg( ai.aimdir(0))
     ai.fireShot()
-    
     
   #Thrust rules
   if ai.selfSpeed() <= 8 and distwalls[0] >= 300 and distwalls[1] > 450 and distwalls[2] > 450 and maxC > 90:     
@@ -88,7 +71,6 @@ def AI_loop():
   elif distwalls[4] < 50:
     ai.thrust(1)
     
- 
   #Turn Rules
   if trackWall < 300 and distwalls[6] < 300:
     ai.turnLeft(1)
@@ -111,8 +93,4 @@ def AI_loop():
   elif index > 4:
     ai.turnLeft(1)  
 
-
-
-ai.start(AI_loop,["-name","A&N2"])
-
-
+ai.start(AI_loop,["-name","A&N"])
