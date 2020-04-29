@@ -1,3 +1,7 @@
+#Alex and Nelia
+#Feb 2020
+#Fuzzy Methods for Fuzzy System
+
 def close(distance):
   if distance < 150:
     mVal = 1
