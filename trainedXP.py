@@ -4,7 +4,6 @@
 #trained agent for XPilot
 
 import random
-
 import libpyAI as ai
 
 def convert(some_list):
