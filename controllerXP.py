@@ -1,14 +1,16 @@
 #Alex and Nelia
-#Feb 1 2020
-#Program 1
+#Apr 2020
+#Genetic Algortihm Controller for XPilot-AI
+
 import libpyAI as ai
 from random import *
-import Genetic_Algorithm as GA
+import geneticAlgorithm as GA
 
 def convert(some_list):
 	mylist = some_list
 	mystring = ''.join(str(i) for i in mylist)
 	return int(str(mystring),2)
+
 global score
 global last
 global frames
@@ -39,6 +41,7 @@ def AI_loop():
   enemyrule2 = convert(chrom[4:8])*20+100
 
   #chrom = population[current_chrom][0]
+	
   #These are Thrusting Rules
   thrustrule1 = convert(chrom[8:11])*3
   thrustrule2 = convert(chrom[11:16])*10+100
@@ -53,7 +56,6 @@ def AI_loop():
   thrustrule11 = convert(chrom[52:56])*20+100
   thrustrule12 = convert(chrom[56:60])*20+100
   thrustrule13 = convert(chrom[60:63])*9
-
 
   turnrule1 = convert(chrom[63:68])*10+100
   turnrule2 = convert(chrom[68:73])*10+100
@@ -214,7 +216,7 @@ def AI_loop():
       avg_file.write(str(average_scoreA))
       avg_file.write("\n")
 
-   #TExtfile for chrmosome of each individual
+   #Textfile for chrmosome of each individual
     if generation%10 == 0 and individual_index == pop_size:
       pg_file = open("Population_gen.txt","a+")
       pg_file.write("It workss")
@@ -288,6 +290,6 @@ average_scoreA = []
 #initialize random pop
 population = GA.init_population(pop_size, chrom_size)
 
-ai.start(AI_loop,["-name","A&N2"])
+ai.start(AI_loop,["-name","A&N"])
     
 
